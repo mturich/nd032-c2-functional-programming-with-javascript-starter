@@ -42,3 +42,6 @@ state = Object.assign(state, incomingState);
 // } 
 
 // Your Code here
+//const res = { ...state, ...incomingState }
+const res = Object.assign(state, incomingState)
+console.log(res)

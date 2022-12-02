@@ -16,3 +16,11 @@ console.log(Object.keys(character));
 // This character has a(n) planet.
 // This character has a(n) job.
 // [ 'This character has a(n) id',  'This character has a(n) name',  'This character has a(n) race', 'This character has a(n) planet', 'This character has a(n) job' ]
+
+for (const key in character) {
+    console.log(`This character has ${character[key]} key.`)
+}
+
+
+const arrayCharacter = Object.keys(character).map(el => `This character has ${character[el]} ${el}.`)
+console.log(arrayCharacter)

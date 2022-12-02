@@ -20,7 +20,7 @@ currentShow.currentSeason = 5
 // but if we freeze the object
 Object.freeze(currentShow);
 
-currentShow.currentSeason = 5;
+currentShow.currentSeason = 4;
 // Throws an error and current_season remains unchanged
 
 
