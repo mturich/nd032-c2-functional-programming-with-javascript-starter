@@ -1,0 +1,27 @@
+{
+   "name": "nd032-c2-functional-programming-with-javascript-starter",
+   "version": "1.0.0",
+   "description": "# Overview This is a branch that contains all the starter code and information needed for the whole course.  Each lesson is divided into a specific repo which has the same name as the lesson.",
+   "main": "functional.js",
+   "scripts": {
+      "code": "tsc async/introduction_to_async/async_await.ts && node async/introduction_to_async/async_await.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/mturich/nd032-c2-functional-programming-with-javascript-starter.git"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/mturich/nd032-c2-functional-programming-with-javascript-starter/issues"
+   },
+   "homepage": "https://github.com/mturich/nd032-c2-functional-programming-with-javascript-starter#readme",
+   "devDependencies": {
+      "es6-promise": "^4.2.8"
+   },
+   "dependencies": {
+      "@types/node": "^18.11.18"
+   }
+}

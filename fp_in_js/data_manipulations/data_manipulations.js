@@ -29,18 +29,39 @@ console.log(countNEO)
 // Averages ------------------------------------------------
 // 2. What was the average absolute magnitude of all the near earth objects in this data set? Return the average absolute_magnitude_h.
 
+function testFunction(arr) {
+   const test = arr.map(el => el.absolute_magnitude_h)
+   const sum = test.reduce((sum,el)=> sum+=el)
+   console.log(test, sum, sum/test.length)
+}
+
 function averageMagnitude(elements) {
-   const arrOfObjects = Object.values(elements).flat(1)
+   const arrOfObjects = Object.values(elements).flat()
+   testFunction(arrOfObjects) 
+   
    return arrOfObjects.reduce((sum, curr, i, arr) => {
       sum += curr.absolute_magnitude_h
-
-      if (i === arr.length - 1) return sum / i
+      
+      if (i === arr.length-1) return sum / arr.length
 
       return sum
    }, 0)
 }
 const avgMagnitude = averageMagnitude(nEO)
-console.log(avgMagnitude)
+
+const asteroids = Object.values(nearEarthObjects.near_earth_objects).flat();
+testFunction(asteroids)
+const resAstro = asteroids.reduce((acc, curr, i, arr) => {
+   acc += curr['absolute_magnitude_h']
+   if (i + 1 == arr.length) { 
+                  // this is the averages trick
+                  //  at the very last item, take the accumulated sum and divide by the total number of items
+         return acc 
+          }
+   return acc
+        }, 0)
+
+console.log(avgMagnitude, resAstro)
 
 // Hint - you can achieve this multiple ways, but the reduce method can be a little-known but cool way to find averages. To do it though, you'll need to use the initial_value argument
 // For some extra challenge try using reduce with the initial setting argument. To learn more about it, take a look at this page: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
@@ -50,6 +71,7 @@ console.log(avgMagnitude)
 
 function pontentialHazard(elements) {
    const arrOfObjects = Object.values(elements).flat(1)
+  
    return arrOfObjects
       .filter(el => el.is_potentially_hazardous_asteroid === true)
       .map(el => ({
@@ -60,8 +82,8 @@ function pontentialHazard(elements) {
       }))
 }
 const isHazard = pontentialHazard(nEO)
-//console.log(isHazard)
-
+console.log('3', isHazard)
+console.log('end 3')
 function potHazardRecuder(elements) {
    const arrOfObjects = Object.values(elements).flat(1)
    const result = arrOfObjects.reduce((res, el, i, arr) => {
@@ -107,7 +129,7 @@ function missDistanceLess900kMiles(elements) {
 }
 
 const lessThan900k = missDistanceLess900kMiles(nEO)
-//console.log(lessThan900k)
+console.log(lessThan900k)
 
 // Alert ---------------------------------------------------
 // 5. Of all the near-earth objects for this date, find the time that the asteroid with the nearest miss will be closest to earth.

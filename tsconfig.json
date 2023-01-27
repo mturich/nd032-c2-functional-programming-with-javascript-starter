@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2016",
+    "module": "ES2022",
+    "sourceMap": true,
+    "lib": [
+      "es6",
+      "DOM"
+    ],
+    "outDir": "lib"
+  },
+  "moduleResolution": "nodenext"
+}
